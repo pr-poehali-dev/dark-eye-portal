@@ -61,15 +61,10 @@ const Index = () => {
       {/* Анимация падающего Азриэля */}
       {isAnimating && (
         <div
-          className={`absolute z-50 transition-all duration-2000 ease-in ${
-            isAnimating
-              ? "translate-y-full opacity-100"
-              : "-translate-y-20 opacity-0"
-          } left-1/2 transform -translate-x-1/2 top-0`}
+          className="absolute z-50 left-1/2 -translate-x-1/2 transition-transform duration-[2000ms] ease-in"
           style={{
-            transform: isAnimating
-              ? "translateX(-50%) translateY(100vh)"
-              : "translateX(-50%) translateY(-5rem)",
+            top: isAnimating ? "100vh" : "-5rem",
+            transform: "translateX(-50%)",
           }}
         >
           <img
