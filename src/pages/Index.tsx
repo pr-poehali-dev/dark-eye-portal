@@ -62,8 +62,15 @@ const Index = () => {
       {isAnimating && (
         <div
           className={`absolute z-50 transition-all duration-2000 ease-in ${
-            isAnimating ? "top-full" : "-top-20"
-          } left-1/2 transform -translate-x-1/2`}
+            isAnimating
+              ? "translate-y-full opacity-100"
+              : "-translate-y-20 opacity-0"
+          } left-1/2 transform -translate-x-1/2 top-0`}
+          style={{
+            transform: isAnimating
+              ? "translateX(-50%) translateY(100vh)"
+              : "translateX(-50%) translateY(-5rem)",
+          }}
         >
           <img
             src="/images/asriel-falling.gif"
